@@ -38,12 +38,13 @@ $( document ).ready(function() {
                     stuRents.mapRegion = mapRegion; // Prepared array of google maps api coordinates for drawing polygon
                     var regionPath = new google.maps.Polygon({
                         path:stuRents.mapRegion,
-                        strokeColor:"#0000FF",
+                        strokeColor: "#"+$('#stroke-color').val(),
                         strokeOpacity:0.8,
                         strokeWeight:2,
-                        fillColor:"#0000FF",
+                        fillColor:"#"+$('#fill-color').val(),
                         fillOpacity:0.4
                     });
+                    console.log($('#stroke-color').val());
                     regionPath.setMap(map); //draw polygon on the map
                     map.setCenter(new google.maps.LatLng(parseFloat(stuRents.coordinates[0][1]), parseFloat(stuRents.coordinates[0][0]))); // Set center of the map to the first coordinate of polygon
                     stuRents.regionPaths[city] = regionPath; // Add regionPath to the array so it can be later accessed and deleted.
