@@ -4,19 +4,7 @@
     <?php
     $showAll = file_get_contents("https://sturents.com/geo/show-all");
     $regions = json_decode($showAll);
-    $kmlString = file_get_contents("https://sturents.com/geo/london.kml?hash=383608f5a3");
-    $kml = simplexml_load_string($kmlString);
-    $coordinatesString = (string)$kml->Placemark->MultiGeometry->Polygon->outerBoundaryIs->LinearRing->coordinates;
-    $patterns = array("/\s+/", "/\s([?.!])/");
-    $replacer = array(" ","$1");
 
-    $cleaned = trim(preg_replace( $patterns, $replacer, $coordinatesString ));
-    $coordinates = explode(' ', $cleaned);
-    $longLatArray = array();
-    foreach($coordinates as $coordinate) {
-        $longLatArray[] = explode(',', $coordinate);
-    }
-    $coordinatesJSON = json_encode($longLatArray);
     ?>
     <title></title>
     <style type="text/css">
