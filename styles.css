@@ -1,0 +1,9 @@
+#map-canvas { width: 500px; height: 500px; margin: 0; padding: 0;}
+#list {
+    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+}
+.active {
+    background: darkgrey;
+}
