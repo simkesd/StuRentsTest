@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="styles.css"/>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzQoJe-SIeIEK5FqpyNTJiFR4BCI9Isq0"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts.js"></script>>
+    <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
 <div id="map-canvas"></div>
+
+<h3>Click on one of the region to show it on the map.</h3>
+
 <div id="list">
     <?php
     foreach($regions as $region) {

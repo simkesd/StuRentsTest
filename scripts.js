@@ -1,14 +1,15 @@
 $( document ).ready(function() {
 
     var mapProp = {
-        zoom:8
+        zoom:8,
+        center:new google.maps.LatLng(parseFloat(51.5072), parseFloat(0.1275))
     };
 
     var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
 
     /*
      * Define object for working with google maps.
-     * To start drawing regions just call draw(city) function.      *
+     * To start drawing regions just call draw(city) function.
      */
     var stuRents = {
         coordinates : {},
@@ -21,7 +22,6 @@ $( document ).ready(function() {
          * Ajax request is calling php script that gets specific city kml data that is parsed for using in google maps api.
          */
         draw : function(city) {
-            if(typeof(city)==='undefined') city = 'london'; // set default value for city
             this._getAllRegions(); // get list of all regions
 
             // Ajax to get specific city kml data
@@ -65,8 +65,6 @@ $( document ).ready(function() {
             });
         }
     };
-
-    stuRents.draw();
 
     /*
      * Click listener for cities
